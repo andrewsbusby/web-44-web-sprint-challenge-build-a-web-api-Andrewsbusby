@@ -9,5 +9,6 @@ server.use(express.json());
 server.use(helmet());
 
 server.use('/api/actions', actionsRouter)
+server.use('/api/projects', projectsRouter)
 
 module.exports = server;
