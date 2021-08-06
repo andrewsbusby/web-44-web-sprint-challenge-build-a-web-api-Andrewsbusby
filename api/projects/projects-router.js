@@ -17,7 +17,7 @@ router.get('/', (req, res, next) => {
         .catch(next)
 })
 
-router.get('/:id', validateProjectId, (req, res, next) => {
+router.get('/:id', validateProjectId, (req, res, next) => { //eslint-disable-line
     res.json(req.proj)
 })
 
