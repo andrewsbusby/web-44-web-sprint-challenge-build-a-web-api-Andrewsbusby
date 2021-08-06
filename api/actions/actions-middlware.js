@@ -20,7 +20,7 @@ function validateAction (req, res, next){ //eslint-disable-line
     const {project_id, description, notes} = req.body
     if(!project_id || !description || description.trim() || !notes || !notes.trim()) {
         res.status(400).json({
-            message: 'missing required fields of notes and description'
+            message: 'missing required fields of notes, description, and project_id'
         })
     } else {
         req.project_id = project_id
