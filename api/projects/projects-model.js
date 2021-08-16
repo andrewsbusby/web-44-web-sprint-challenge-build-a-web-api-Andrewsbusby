@@ -2,14 +2,6 @@
 const db = require("../../data/dbConfig.js");
 const mappers = require('../../data/helpers/mappers');
 
-module.exports = {
-  get,
-  insert,
-  update,
-  remove,
-  getProjectActions,
-};
-
 function get(id) {
   let query = db("projects as p");
 
@@ -60,3 +52,11 @@ function getProjectActions(projectId) {
     .where("project_id", projectId)
     .then(actions => actions.map(action => mappers.actionToBody(action)));
 }
+
+module.exports = {
+  get,
+  insert,
+  update,
+  remove,
+  getProjectActions,
+};
