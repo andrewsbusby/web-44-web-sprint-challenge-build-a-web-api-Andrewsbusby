@@ -2,12 +2,6 @@
 const db = require('../../data/dbConfig.js');
 const mappers = require('../../data/helpers/mappers');
 
-module.exports = {
-  get,
-  insert,
-  update,
-  remove,
-};
 
 function get(id) {
   let query = db('actions');
@@ -46,3 +40,10 @@ function update(id, changes) {
 function remove(id) {
   return db('actions').where('id', id).del();
 }
+
+module.exports = {
+  get,
+  insert,
+  update,
+  remove,
+};
